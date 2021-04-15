@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="master.css">
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+.bg{
+  background-image: url("res/p1.jpg");
+}
+input[type=text], select, textarea {
+  width: 20%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+::placeholder {
+  color: black;
+  opacity: 0.3; /* Firefox */
+}
+select{
+  opacity: 1;
+}
+option{
+  opacity: 0.1;
+
+}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<nav >
+<ul>
+  <li><a  href="index.html">Home</a></li>
+  <li><a href="client.html">client</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="login.html">logout</a></li>
+  
+</ul>
+</nav>
+<h3>Payment Form</h3>
+
+<div class="container" >
+  <form action="index.html"><br>
+    <br><label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+<br><br>
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+<br><br>
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="India">India</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+    <br><br>
+     <label for="cradit">Cradit Card Number</label>
+    <input type="text" name="ccn" id="cnn" placeholder="Starting with 34 or 37, length 15 digits" required="">
+    <br><br>
+    <label for="cradit">Expiry Date</label>
+    <input type="date" name="date" required="">
+    <br><br>
+
+    <label for="cradit">Cvv Number</label>
+    <input type="text" id="cvv" name="cvv" required="">
+    
+
+    <input type="submit" value="Submit" onclick="javascript:ccnVal()">
+
+  </form>
+
+  <script type="text/javascript">
+function ccnVal()
+{
+    
+    var cardno = /^(?:3[47][0-9]{13})$/;
+  if(document.getElementById('cnn').value.match(cardno) && document.getElementById('cvv').value == "111" )
+        {
+        alert("payment succeeded");
+        }
+      else
+        {
+        alert("Not a valid  credit card number!");
+        
+        }
+        
+    
+}
+</script>
+</div>
+
+</body>
+</html>
